@@ -10,11 +10,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'damian45d5',
-      database: 'tasksmanager',
+      host: process.env.MYSQLHOST || 'mysql.railway.internal',
+      port: +process.env.MYSQLPORT || 3306,
+      username: process.env.MYSQLUSER || '*******',
+      password: process.env.MYSQLPASSWORD || 'VIHExQHfZvyXRCxCkwZFxntNjaPnOCMX',
+      database: process.env.MYSQL_DATABASE || '*******',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
