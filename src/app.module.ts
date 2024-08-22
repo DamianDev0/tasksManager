@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TasksModule } from './tasks/tasks.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -12,9 +12,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       type: 'mysql',
       host: process.env.MYSQLHOST || 'mysql.railway.internal',
       port: +process.env.MYSQLPORT || 3306,
-      username: process.env.MYSQLUSER || '*******',
-      password: process.env.MYSQLPASSWORD || 'VIHExQHfZvyXRCxCkwZFxntNjaPnOCMX',
-      database: process.env.MYSQL_DATABASE || '*******',
+      username: process.env.MYSQLUSER || 'tu_usuario',
+      password: process.env.MYSQLPASSWORD || 'tu_contraseña',
+      database: process.env.MYSQL_DATABASE || 'nombre_base_de_datos',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
