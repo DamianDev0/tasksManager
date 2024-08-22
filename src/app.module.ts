@@ -10,11 +10,11 @@ import { TasksModule } from './tasks/tasks.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.MYSQLHOST || 'mysql.railway.internal',
+      host: process.env.MYSQLHOST || 'localhost',
       port: +process.env.MYSQLPORT || 3306,
-      username: process.env.MYSQLUSER || 'tu_usuario',
-      password: process.env.MYSQLPASSWORD || 'tu_contraseña',
-      database: process.env.MYSQL_DATABASE || 'nombre_base_de_datos',
+      username: process.env.MYSQLUSER || 'root',
+      password: process.env.MYSQLPASSWORD || 'damian45d5',
+      database: process.env.MYSQL_DATABASE || 'tasksmanager',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
